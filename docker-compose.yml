@@ -1,0 +1,22 @@
+version: '3'
+services:
+  lumen-swoole-composer:
+    container_name: lumen-swoole-composer
+    image: tasslin/php
+    restart: 'no'
+    working_dir: /var/www/project
+    volumes:
+      - .:/var/www/project
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        composer install
+  lumen-swoole:
+    container_name: lumen-swoole
+    image: tasslin/php
+    volumes:
+      - .:/var/www/project
+    ports:
+      - "8080:1215"
+    restart: always
