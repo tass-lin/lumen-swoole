@@ -99,4 +99,6 @@ $app->router->group([
 
 $app->register(SwooleTW\Http\LumenServiceProvider::class);
 
+$app->register(Laravel\Tinker\TinkerServiceProvider::class);
+
 return $app;
