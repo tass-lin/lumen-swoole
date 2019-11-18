@@ -15,6 +15,7 @@ services:
   lumen-swoole:
     container_name: lumen-swoole
     image: tasslin/php
+    working_dir: /var/www/project
     volumes:
       - .:/var/www/project
     ports:
